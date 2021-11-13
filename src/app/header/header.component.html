@@ -1,14 +1,21 @@
+<mat-toolbar id="navlist-search">
+  <mat-form-field class="full-width remove-decoration" appearance="standard">
+    <input matInput placeholder="First Name of Person" class="icon-toolbar toobar-search" type="text" (click)="findEmployee()">
+  </mat-form-field>
+  <span class="spacer"></span>
+    <a matRipple class="expanding-ripple">
+      <mat-icon class="icon-button-search">
+        cancel
+      </mat-icon>
+    </a>
+</mat-toolbar>
+
 <mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist">
   <a #trigger class="icon-toolbar" href="/">Employee Searcher</a>
   <span class="spacer"></span>
-  <!-- <div class="search"> -->
     <a matRipple class="expanding-ripple">
       <mat-icon class="icon-button">
         search
       </mat-icon>
     </a>
-      <!-- <form action="#">
-        <input matInput type="text" (click)="findEmployee()">
-      </form>
-  </div> -->
 </mat-toolbar>
