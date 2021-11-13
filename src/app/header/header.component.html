@@ -1,9 +1,14 @@
 <mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist">
   <a #trigger class="icon-toolbar" href="/">Employee Searcher</a>
   <span class="spacer"></span>
-  <div class="search">
-      <form action="#">
+  <!-- <div class="search"> -->
+    <a matRipple class="expanding-ripple">
+      <mat-icon class="icon-button">
+        search
+      </mat-icon>
+    </a>
+      <!-- <form action="#">
         <input matInput type="text" (click)="findEmployee()">
       </form>
-  </div>
+  </div> -->
 </mat-toolbar>

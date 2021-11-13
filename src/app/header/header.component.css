@@ -6,6 +6,7 @@
     border-radius: 0px 0px 16px 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     align-items: center;
+    z-index: 10;
 }
 
 #navlist a:link { text-decoration: none; }
@@ -16,20 +17,6 @@
 
 #navlist a:active { text-decoration: none; }
 
-/* styling search bar */
-.search input[type=text]{
-    text-indent: 10px;
-    width:300px;
-    height:25px;
-    border-radius:250px;
-    border: none;
-}
-
-.search{
-    float:right;
-    margin:7px;
-}
-
 .spacer {
     flex: 1 1 auto;
 }
@@ -37,4 +24,16 @@
 .icon-toolbar{
     color: #f2f2f2;
     font-size: 48px;
+}
+
+.icon-button{
+    color: #f2f2f2;
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.expanding-ripple{
+    overflow: visible;
+    padding-right: 16px;
+    padding-left: 4px;
 }

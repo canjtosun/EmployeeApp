@@ -1,24 +1,18 @@
-h1{
-  padding-top: 50px;
-}
-
-td{
-  padding-right: 14px;
-}
-
-th{
-  text-align: left;
-}
-
 .sidenav-container {
   position: fixed;
   top: 72px;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index:-1;
 }
 
 .sidenav {
+  margin-bottom: 24px;
+}
+
+.menu-item{
+  cursor: pointer;
   padding: 16px;
+  font-size: 24px;
+  color: #4A4A4A;
 }

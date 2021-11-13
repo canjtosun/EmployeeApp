@@ -1,10 +1,12 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav mode="side" opened class="sidenav">
-    <div *ngFor="let user of employees">
-      <div (click)="setEmployee(user.first_name)">
-        {{user.first_name}} {{user.last_name}}
-      </div>
-    </div>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of employees">
+        <div class="menu-item" (click)="setEmployee(user.first_name)">
+          {{user.first_name}} {{user.last_name}}
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-employee-details>

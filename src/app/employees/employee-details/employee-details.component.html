@@ -1,36 +1,68 @@
 <div class="userDetails">
-  <h2>Employee details</h2>
-  <table>
-    <tr>
-      <td>Name:</td><td>{{employee.first_name}}</td>
-    </tr>
-    <tr>
-      <td>Last Name:</td><td>{{employee.last_name}}</td>
-    </tr>
-    <tr>
-      <td>Company Name:</td><td>{{employee.company_name}}</td>
-    </tr>
-    <tr>
-      <td>Address:</td><td>{{employee.address}}</td>
-    </tr>
-    <tr>
-      <td>City:</td><td>{{employee.city}}</td>
-    </tr>
-    <tr>
-      <td>County:</td><td>{{employee.county}}</td>
-    </tr>
-    <tr>
-      <td>Postal:</td><td>{{employee.postal}}</td>
-    </tr>
-    <tr>
-      <td>Phone:</td><td>{{employee.phone}}</td>
-    </tr>
-    <tr>
-      <td>Email:</td><td>{{employee.email}}</td>
-    </tr>
-    <tr>
-      <td>Web:</td><td>{{employee.web}}</td>
-    </tr>
+  <div class="padding">
+    <div class="label">
+      Name
+    </div>
+    <div id="name">
+      {{employee.first_name}} {{employee.last_name}}
+    </div>
+    <div class="padding indent-padding">
 
-  </table>
+        <div class="label">
+          Company Name
+        </div>
+        <div class="details">
+          {{employee.company_name}}
+        </div>
+
+        <div class="label">
+          Address
+        </div>
+        <div class="details">
+          {{employee.address}}
+        </div>
+
+        <div class="label">
+          City
+        </div>
+        <div class="details">
+          {{employee.city}}
+        </div>
+
+        <div class="label">
+          County
+        </div>
+        <div class="details">
+          {{employee.county}}
+        </div>
+
+        <div class="label">
+          Postal
+        </div>
+        <div class="details">
+          {{employee.postal}}
+        </div>
+
+        <div class="label">
+          Phone
+        </div>
+        <div class="details">
+          {{employee.phone}}
+        </div>
+
+        <div class="label">
+          Email
+        </div>
+        <div class="details">
+          {{employee.email}}
+        </div>
+
+        <div class="label">
+          Web
+        </div>
+        <div class="details">
+          {{employee.web}}
+        </div>
+
+    </div>
 </div>

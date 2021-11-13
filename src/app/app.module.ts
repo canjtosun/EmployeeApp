@@ -4,6 +4,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatRippleModule } from '@angular/material/core'; 
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppComponent } from './app.component';
@@ -36,6 +38,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatRippleModule,
     MatButtonModule,
+    MatListModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [],
