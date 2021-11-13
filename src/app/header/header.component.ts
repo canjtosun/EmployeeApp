@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
 
@@ -9,13 +10,36 @@ import { Employee } from '../Model/Employee';
 })
 export class HeaderComponent implements OnInit {
 
-  employees!: Array<Employee>;
+  employees: Array<Employee>;
+  selectedEmployee: Employee;
+  searchword: string;
 
-  constructor(private dataService: DataService) { }
+  @Output() searchcriteria = new EventEmitter<String>();
+  searchThis() {
+      this.searchcriteria.emit(this.searchword)
+  }
+
+  constructor(private dataService: DataService,
+    private route: ActivatedRoute,
+    private router: Router) {
+  }
 
   ngOnInit(): void {
     this.employees = this.dataService.employees;
-
+    this.route.queryParams.subscribe(
+      (params) => {
+        const first_name = params['first_name'];
+        if(first_name){
+          this.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
+        }
+      }
+    );
   }
+
+  findEmployee(){
+    this.router.navigate(['employee', 'employee-details']);
+  }
+
+
 
 }

@@ -7,9 +7,12 @@ import { FooterComponent } from './footer/footer.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailsComponent } from './employees/employee-details/employee-details.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './footer/contact/contact.component';
 
 const routes: Routes = [
-  {path : 'employee/employee-details', component : EmployeeDetailsComponent}
+  {path : 'employee/employee-details', component : EmployeeDetailsComponent},
+  {path : 'contact', component: ContactComponent}
+
 ];
 
 @NgModule({
@@ -18,7 +21,8 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     EmployeesComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

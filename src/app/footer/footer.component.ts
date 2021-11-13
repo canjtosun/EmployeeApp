@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  routes: any;
 
-  constructor() { }
+  isVisible = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) { }
+
 
   ngOnInit(): void {
+
+  }
+
+  contactUs(){
+    this.router.navigate(['contact']);
+    this.isVisible = true;
   }
 
 }
