@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   employees: Array<Employee>;
   selectedEmployee: Employee;
   searchword: string;
+  searchPopup: boolean = false;
 
   @Output() searchcriteria = new EventEmitter<String>();
   searchThis() {
@@ -40,6 +41,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['employee', 'employee-details']);
   }
 
+  popupSearch(){
+    this.searchPopup = true;
+  }
 
+  popdownSearch(){
+    this.searchPopup = false;
+  }
 
 }
