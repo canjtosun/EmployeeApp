@@ -9,7 +9,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-employee-details>
+    <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee" [@inOutAnimation]="selectedEmployee"></app-employee-details>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

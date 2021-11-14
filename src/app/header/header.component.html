@@ -1,4 +1,4 @@
-<mat-toolbar id="navlist-search" *ngIf="searchPopup">
+<mat-toolbar id="navlist-search" *ngIf="searchPopup" [@inAnimation]>
   <mat-form-field class="full-width remove-decoration" appearance="standard">
     <input matInput placeholder="First Name of Person" class="icon-toolbar toobar-search" type="text" (click)="findEmployee()">
   </mat-form-field>
@@ -10,7 +10,7 @@
     </a>
 </mat-toolbar>
 
-<mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist" *ngIf="!searchPopup">
+<mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist" *ngIf="!searchPopup" [@outAnimation]>
   <a #trigger class="icon-toolbar" href="/">Employee Searcher</a>
   <span class="spacer"></span>
   <a matRipple class="expanding-ripple" (click) = "popupSearch()">
