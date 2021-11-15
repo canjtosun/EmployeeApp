@@ -1,5 +1,25 @@
 a {
   cursor: pointer;
-  padding-inline: 10px;
+  padding-right: 10px;
   text-decoration: underline;
+  left: 0px;
 }
+
+ .container{
+   background-color: #393939;
+   color: white;
+   padding: 16px;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px;
+    text-align: right;
+
+
+
+}
+
+a:visited{
+  color: white;
+};
+
+

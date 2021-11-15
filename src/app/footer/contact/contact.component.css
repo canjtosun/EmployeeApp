@@ -4,13 +4,13 @@ input[type=text], select, textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-top: 6px;
+  margin-top: 10px;
   margin-bottom: 16px;
   resize: vertical;
 }
 
 input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #e66852;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -19,7 +19,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #e68152;
 }
 
 .container {
