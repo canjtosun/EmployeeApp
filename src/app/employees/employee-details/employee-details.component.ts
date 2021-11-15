@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Employee } from 'src/app/Model/Employee';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -8,10 +8,7 @@ import { Employee } from 'src/app/Model/Employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
 
-  @Input()
-  employee!: Employee;
-
-  constructor() { }
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
   }

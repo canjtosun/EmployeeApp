@@ -8,6 +8,7 @@
 
 .sidenav {
   margin-bottom: 24px;
+  min-width: 200px;
 }
 
 .menu-item{

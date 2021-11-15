@@ -17,6 +17,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailsComponent } from './employees/employee-details/employee-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './footer/contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './search-filter.pipe';
 
 const routes: Routes = [
   {path : 'employee/employee-details', component : EmployeeDetailsComponent},
@@ -31,7 +33,8 @@ const routes: Routes = [
     FooterComponent,
     EmployeesComponent,
     EmployeeDetailsComponent,
-    ContactComponent
+    ContactComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -44,9 +47,10 @@ const routes: Routes = [
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [FilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

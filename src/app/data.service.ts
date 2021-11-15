@@ -9,6 +9,8 @@ export class DataService {
 
   employees!: Array<Employee>;
   fileName :string = '/assets/employee_data.xlsx';
+  searchText = '';
+  selectedEmployee: Employee;
 
   constructor() {
     this.employees = new Array<Employee>();
@@ -30,6 +32,7 @@ export class DataService {
               this.employees.push(new Employee(...Object.values(res)));
           });
         }
+        this.employees.sort( (a,b) => a.first_name < b.first_name ? -1 : 1 );
       }
     );
   }

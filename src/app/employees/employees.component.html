@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav mode="side" opened class="sidenav">
     <mat-nav-list>
-      <mat-list-item *ngFor="let user of employees">
+      <mat-list-item *ngFor="let user of employees | filter: this.dataService.searchText">
         <div class="menu-item" (click)="setEmployee(user.first_name)">
           {{user.first_name}} {{user.last_name}}
         </div>
@@ -9,7 +9,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee" [@inOutAnimation]="selectedEmployee"></app-employee-details>
+    <app-employee-details *ngIf="this.dataService.selectedEmployee" [@inOutAnimation]="this.dataService.selectedEmployee"></app-employee-details>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
