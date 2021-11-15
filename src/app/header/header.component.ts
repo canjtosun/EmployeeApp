@@ -10,42 +10,42 @@ import { Employee } from '../Model/Employee';
   styleUrls: ['./header.component.css'],
   animations: [
     trigger(
-      'inAnimation', 
+      'inAnimation',
       [
         transition(
-          ':enter', 
+          ':enter',
           [
             style({ height: 0, opacity: 1 }),
-            animate('0.25s ease-out', 
+            animate('0.25s ease-out',
                     style({ height: 72, opacity: 1 }))
           ]
         ),
         transition(
-          ':leave', 
+          ':leave',
           [
             style({ height: 72, opacity: 1 }),
-            animate('0.25s ease-out', 
+            animate('0.25s ease-out',
                     style({ height: 0, opacity: 1 }))
           ]
         )
       ]
     ),
     trigger(
-      'outAnimation', 
+      'outAnimation',
       [
         transition(
-          ':leave', 
+          ':leave',
           [
             style({ "border-radius": "0px 0px 16px 16px" }),
-            animate('0.25s ease-out', 
+            animate('0.25s ease-out',
                     style({ "border-radius": "0px 0px 0px 0px" }))
           ]
         ),
         transition(
-          ':enter', 
+          ':enter',
           [
             style({ "border-radius": "0px 0px 0px 0px" }),
-            animate('0.25s ease-out', 
+            animate('0.25s ease-out',
                     style({ "border-radius": "0px 0px 16px 16px" }))
           ]
         )
