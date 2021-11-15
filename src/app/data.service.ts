@@ -32,6 +32,7 @@ export class DataService {
               this.employees.push(new Employee(...Object.values(res)));
           });
         }
+        this.employees.sort( (a,b) => a.first_name < b.first_name ? -1 : 1 );
       }
     );
   }
