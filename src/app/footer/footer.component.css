@@ -1,5 +1,6 @@
 a {
   cursor: pointer;
+<<<<<<< HEAD
   padding-right: 10px;
   text-decoration: underline;
   left: 0px;
@@ -23,3 +24,40 @@ a:visited{
 };
 
 
+=======
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+}
+
+span{
+  color:white;
+  padding: 0px 4px;
+}
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
+.footer-align{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  background-color: #393939;
+  z-index: 10;
+}
+
+.padding-up{
+  padding: 4px 8px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+>>>>>>> 68c8c90aaa968d864e76bb6e6d295dab7fc1acf2

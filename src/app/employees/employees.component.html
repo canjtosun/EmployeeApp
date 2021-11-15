@@ -1,31 +1,15 @@
-<h1>List of Employees</h1>
-<div class="row">
-    <table class="table">
-      <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-      </tr>
-      </thead>
-
-
-      <tbody>
-      <tr *ngFor="let user of employees"> <!-- repeat this tr for each user -->
-        <td>{{user.first_name}}</td>
-        <td>{{user.last_name}}</td>
-        <td><button type="button" class="btn btn-primary"
-          (click)="setEmployee(user.first_name)">View</button></td>
-        </tr>
-      </tbody>
-
-
-    </table>
-
-
-  <div class="col-6">
-      <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-employee-details>
-  </div>
-
-
-</div>
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let user of employees">
+        <div class="menu-item" (click)="setEmployee(user.first_name)">
+          {{user.first_name}} {{user.last_name}}
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-employee-details *ngIf="selectedEmployee" [employee]="selectedEmployee" [@inOutAnimation]="selectedEmployee"></app-employee-details>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 

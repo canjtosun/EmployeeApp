@@ -1,0 +1,28 @@
+.padding{
+    padding: 20px 36px;
+}
+
+.indent-padding{
+    padding-top: 20px;
+}
+
+.label{
+    color: #696969;
+    font-size: 20px;
+}
+
+#name{
+    font-weight: 500;
+    font-size: 48px;
+    padding: 0;
+    line-height: 52px;
+    color: #000000;
+}
+
+.details{
+    font-weight: 300;
+    font-size: 36px;
+    padding: 0 0 12px 0;
+    line-height: 40px;
+    color: #000000;
+}

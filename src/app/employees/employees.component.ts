@@ -1,12 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
 
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
+  styleUrls: ['./employees.component.css'],
+  animations: [
+    trigger(
+      'inOutAnimation', 
+      [
+        transition(
+          ':enter', 
+          [
+            style({ opacity: 0 }),
+            animate('0.25s ease-in', 
+                    style({ opacity: 1 }))
+          ]
+        ),
+        transition(
+          '* => *', 
+          [
+            style({ opacity: 0 }),
+            animate('0.25s ease-in', 
+                    style({ opacity: 1 }))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class EmployeesComponent implements OnInit {
 
