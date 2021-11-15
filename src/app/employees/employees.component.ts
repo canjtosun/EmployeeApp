@@ -10,22 +10,29 @@ import { Employee } from '../Model/Employee';
   styleUrls: ['./employees.component.css'],
   animations: [
     trigger(
-      'inOutAnimation', 
+      'inOutAnimation',
       [
         transition(
-          ':enter', 
+          ':enter',
           [
             style({ opacity: 0 }),
-            animate('0.25s ease-in', 
+            animate('0.25s ease-in',
                     style({ opacity: 1 }))
           ]
         ),
         transition(
-          '* => *', 
+          '* => *',
           [
             style({ opacity: 0 }),
-            animate('0.25s ease-in', 
+            animate('0.25s ease-in',
                     style({ opacity: 1 }))
+          ]
+        ),transition(
+          ':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.25s ease-out',
+                    style({ opacity: 0 }))
           ]
         )
       ]
@@ -35,9 +42,9 @@ import { Employee } from '../Model/Employee';
 export class EmployeesComponent implements OnInit {
 
   employees!: Array<Employee>;
-  selectedEmployee!: Employee;
+  searchText = '';
 
-  constructor(private dataService: DataService,
+  constructor(public dataService: DataService,
     private route: ActivatedRoute,
     private router: Router) {
   }
@@ -48,7 +55,7 @@ export class EmployeesComponent implements OnInit {
       (params) => {
         const first_name = params['first_name'];
         if(first_name){
-          this.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
+          this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
         }
       }
     );
