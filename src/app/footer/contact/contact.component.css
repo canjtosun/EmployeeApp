@@ -32,7 +32,8 @@ input[type=submit]:hover {
   bottom: 0;
   right: 0;
   z-index: 40;
-  height: fit-content;
+  height: 100%;
+  min-height: fit-content;
 }
 
 .full-width{

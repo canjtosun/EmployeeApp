@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FooterComponent implements OnInit {
   routes: any;
 
+  @Output()
   isVisible = false;
 
   constructor(
@@ -25,4 +26,7 @@ export class FooterComponent implements OnInit {
     this.isVisible = true;
   }
 
+  closePopup(isVisible: boolean){
+    this.isVisible = isVisible
+  }
 }

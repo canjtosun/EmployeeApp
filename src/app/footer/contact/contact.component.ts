@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +6,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  @Input()
-  isVisible: boolean;
+  @Output()
+  isVisible = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
   }
 
   closePopup(){
-    this.isVisible = false;
+    this.isVisible.emit(false);
   }
 
 }

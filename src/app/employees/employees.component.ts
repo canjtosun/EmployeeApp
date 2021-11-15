@@ -30,7 +30,7 @@ import { Employee } from '../Model/Employee';
         ),transition(
           ':leave',
           [
-            style({ opacity: 1 }),
+            style({ opacity: 10 }),
             animate('0.25s ease-out',
                     style({ opacity: 0 }))
           ]
