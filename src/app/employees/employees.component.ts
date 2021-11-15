@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
 
@@ -13,11 +13,11 @@ import { Employee } from '../Model/Employee';
       'inOutAnimation',
       [
         transition(
-          ':enter',
+          ':leave',
           [
-            style({ opacity: 0 }),
-            animate('0.25s ease-in',
-                    style({ opacity: 1 }))
+            style({ opacity: 1 }),
+            animate('0.25s ease-out',
+                    style({ opacity: 0 }))
           ]
         ),
         transition(
@@ -26,13 +26,6 @@ import { Employee } from '../Model/Employee';
             style({ opacity: 0 }),
             animate('0.25s ease-in',
                     style({ opacity: 1 }))
-          ]
-        ),transition(
-          ':leave',
-          [
-            style({ opacity: 10 }),
-            animate('0.25s ease-out',
-                    style({ opacity: 0 }))
           ]
         )
       ]
