@@ -1,24 +1,32 @@
-<h3>Contact Form</h3>
-
 <div class="container">
+  <h3>Contact Form</h3>
   <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label for="fname">First Name</mat-label>
+      <input matInput type="text" id="fname" name="firstname" />
+    </mat-form-field>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label for="lname">Last Name</mat-label>
+      <input matInput type="text" id="lname" name="lastname" />
+    </mat-form-field>
 
-    <label for="address">Address</label>
-    <select type="text" id="address" name="address">
-    </select>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label for="address">Address</mat-label>
+      <input matInput type="text" id="address" name="address" />
+    </mat-form-field>
 
-    <label for="email">Email</label>
-    <select type="text" id="email" name="email">
-    </select>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label for="email">Email</mat-label>
+      <input matInput type="text" id="email" name="email" />
+    </mat-form-field>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Send us a message" style="height:200px"></textarea>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label for="subject">Subject</mat-label>
+      <textarea matInput id="subject" name="subject" placeholder="Send us a message" style="height:200px"></textarea>
+    </mat-form-field>
 
-    <input type="submit" value="Submit">
+    <button mat-flat-button type="submit" color="primary">Submit</button>
+    <button mat-stroked-button color="secondary" (click)="closePopup()" style="margin-left:8px">Cancel</button>
   </form>
 </div>

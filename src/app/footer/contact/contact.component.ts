@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  @Input()
+  isVisible: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closePopup(){
+    this.isVisible = false;
   }
 
 }
