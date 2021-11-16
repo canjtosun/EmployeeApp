@@ -14,17 +14,17 @@ import { DataService } from '../data.service';
         transition(
           ':enter',
           [
-            style({ height: 0, opacity: 1 }),
+            style({ transform: 'translateY(-100%)' }),
             animate('0.25s ease-out',
-                    style({ height: 72, opacity: 1 }))
+                    style({ transform: 'translateY(0)' }))
           ]
         ),
         transition(
           ':leave',
           [
-            style({ height: 72, opacity: 1 }),
+            style({ transform: 'translateY(0)' }),
             animate('0.25s ease-out',
-                    style({ height: 0, opacity: 1 }))
+                    style({ transform: 'translateY(-100%)' }))
           ]
         )
       ]
