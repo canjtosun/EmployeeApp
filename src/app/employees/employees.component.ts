@@ -44,18 +44,10 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.employees = this.dataService.employees;
-    this.route.queryParams.subscribe(
-      (params) => {
-        const first_name = params['first_name'];
-        if(first_name){
-          this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
-        }
-      }
-    );
   }
 
   setEmployee(first_name: string){
-    this.router.navigate(['employee', 'employee-details'], {queryParams: {first_name} } );
+    this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
   }
 
 }

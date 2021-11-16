@@ -15,7 +15,7 @@ import { DataService } from '../data.service';
           ':enter',
           [
             style({ transform: 'translateY(-100%)' }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ transform: 'translateY(0)' }))
           ]
         ),
@@ -23,7 +23,7 @@ import { DataService } from '../data.service';
           ':leave',
           [
             style({ transform: 'translateY(0)' }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ transform: 'translateY(-100%)' }))
           ]
         )
@@ -36,7 +36,7 @@ import { DataService } from '../data.service';
           ':leave',
           [
             style({ "border-radius": "0px 0px 16px 16px" }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ "border-radius": "0px 0px 0px 0px" }))
           ]
         ),
@@ -44,7 +44,7 @@ import { DataService } from '../data.service';
           ':enter',
           [
             style({ "border-radius": "0px 0px 0px 0px" }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ "border-radius": "0px 0px 16px 16px" }))
           ]
         )
