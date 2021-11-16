@@ -12,7 +12,7 @@ app.use(requireHTTPS);
 app.use(express.static('./dist/employee-app.json'));
 
 app.get('/*', function(req, res) {
-  res.sendFile('index.html'
+  res.sendFile('index.html', {root: 'dist/'}
 );
 });
 
