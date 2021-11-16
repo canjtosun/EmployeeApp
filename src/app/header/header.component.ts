@@ -79,4 +79,8 @@ export class HeaderComponent implements OnInit {
     this.onSearchChange();
   }
 
+  resetPage(){
+    this.dataService.selectedEmployee = null;
+  }
+
 }
