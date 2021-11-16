@@ -16,7 +16,7 @@ import { Employee } from '../Model/Employee';
           ':leave',
           [
             style({ opacity: 1 }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ opacity: 0 }))
           ]
         ),
@@ -24,7 +24,7 @@ import { Employee } from '../Model/Employee';
           '* => *',
           [
             style({ opacity: 0 }),
-            animate('0.25s ease-in',
+            animate('0.1s ease-in',
                     style({ opacity: 1 }))
           ]
         )

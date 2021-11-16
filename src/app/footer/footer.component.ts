@@ -13,16 +13,16 @@ import { ActivatedRoute, Router } from '@angular/router';
       transition(
         ':enter',
         [
-          style({ height: 0 }),
+          style({ opacity: 0 }),
           animate('0.25s ease-in',
-                  style({ height: '100%' }))
+                  style({ opacity: 1 }))
         ]
       ),transition(
         ':leave',
         [
-          style({ height: '100%' }),
-          animate('0.25s ease-in',
-                  style({ height: 0 }))
+          style({ opacity: 1 }),
+          animate('0.25s ease-out',
+                  style({ opacity: 0 }))
         ]
       )
     ]
@@ -44,7 +44,6 @@ export class FooterComponent implements OnInit {
   }
 
   contactUs(){
-    this.router.navigate(['contact']);
     this.isVisible = true;
   }
 
