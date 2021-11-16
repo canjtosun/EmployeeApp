@@ -35,6 +35,10 @@ input[type=submit]:hover {
   right: 0;
   z-index: 40;
   height: 100%;
+  overflow: scroll;
+}
+
+.inner-padding{
   padding: 20px;
 }
 

@@ -1,5 +1,5 @@
 
-<app-contact *ngIf="isVisible" (isModalVisible)="closePopup($event)" [@inOutAnimationModal]></app-contact>
+<app-contact *ngIf="isVisible" (isModalVisible)="closePopup($event)" [@inOutAnimationModal]="isVisible ? 'true' : 'false'"></app-contact>
 <div class="footer-align">
   <span class="spacer"></span>
   <div class="padding-up">

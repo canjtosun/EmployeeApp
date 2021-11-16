@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,19 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
     trigger(
     'inOutAnimationModal',
     [
+      state('true', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('false', style({ opacity: 0, transform: 'translateY(-100%)' })),
       transition(
-        ':enter',
+        'false <=> true',
         [
-          style({ opacity: 0 }),
-          animate('0.25s ease-in',
-                  style({ opacity: 1 }))
-        ]
-      ),transition(
-        ':leave',
-        [
-          style({ opacity: 1 }),
-          animate('0.25s ease-out',
-                  style({ opacity: 0 }))
+          animate(500)
         ]
       )
     ]
