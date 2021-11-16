@@ -1,10 +1,25 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css'],
+  animations: [
+    trigger(
+    'inOutAnimationModal',
+    [
+      state('true', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('false', style({ opacity: 0, transform: 'translateY(-100%)' })),
+      transition(
+        'false <=> true',
+        [
+          animate(500)
+        ]
+      )
+    ]
+  )]
 })
 export class FooterComponent implements OnInit {
   routes: any;
@@ -12,9 +27,7 @@ export class FooterComponent implements OnInit {
   @Output()
   isVisible = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor() { }
 
 
   ngOnInit(): void {
@@ -22,7 +35,6 @@ export class FooterComponent implements OnInit {
   }
 
   contactUs(){
-    this.router.navigate(['contact']);
     this.isVisible = true;
   }
 

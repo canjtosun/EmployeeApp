@@ -15,7 +15,7 @@
 
 
 <mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist" *ngIf="!searchPopup" [@outAnimation]>
-  <a #trigger class="icon-toolbar" href="/">Employee Searcher</a>
+  <a #trigger class="icon-toolbar" (click)="resetPage()">Employee Searcher</a>
   <span class="spacer"></span>
   <a matRipple class="expanding-ripple" (click) = "popupSearch()">
     <mat-icon class="icon-button">

@@ -1,9 +1,9 @@
 
-<app-contact *ngIf="isVisible" (isVisible)="closePopup($event)"></app-contact>
+<app-contact *ngIf="isVisible" (isModalVisible)="closePopup($event)" [@inOutAnimationModal]="isVisible ? 'true' : 'false'"></app-contact>
 <div class="footer-align">
   <span class="spacer"></span>
   <div class="padding-up">
-    <a>OurCompany © 2021</a>
+    <span>OurCompany © 2021</span>
     <span> |</span>
     <a href="https://twitter.com">Twitter</a>
     <span> |</span>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
 
@@ -13,26 +13,19 @@ import { Employee } from '../Model/Employee';
       'inOutAnimation',
       [
         transition(
-          ':enter',
+          ':leave',
           [
-            style({ opacity: 0 }),
-            animate('0.25s ease-in',
-                    style({ opacity: 1 }))
+            style({ opacity: 1 }),
+            animate('0.1s ease-out',
+                    style({ opacity: 0 }))
           ]
         ),
         transition(
           '* => *',
           [
             style({ opacity: 0 }),
-            animate('0.25s ease-in',
+            animate('0.1s ease-in',
                     style({ opacity: 1 }))
-          ]
-        ),transition(
-          ':leave',
-          [
-            style({ opacity: 10 }),
-            animate('0.25s ease-out',
-                    style({ opacity: 0 }))
           ]
         )
       ]
@@ -51,18 +44,10 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.employees = this.dataService.employees;
-    this.route.queryParams.subscribe(
-      (params) => {
-        const first_name = params['first_name'];
-        if(first_name){
-          this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
-        }
-      }
-    );
   }
 
   setEmployee(first_name: string){
-    this.router.navigate(['employee', 'employee-details'], {queryParams: {first_name} } );
+    this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
   }
 
 }

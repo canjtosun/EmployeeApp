@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
 
@@ -14,17 +13,17 @@ import { DataService } from '../data.service';
         transition(
           ':enter',
           [
-            style({ height: 0, opacity: 1 }),
-            animate('0.25s ease-out',
-                    style({ height: 72, opacity: 1 }))
+            style({ transform: 'translateY(-100%)' }),
+            animate('0.1s ease-out',
+                    style({ transform: 'translateY(0)' }))
           ]
         ),
         transition(
           ':leave',
           [
-            style({ height: 72, opacity: 1 }),
-            animate('0.25s ease-out',
-                    style({ height: 0, opacity: 1 }))
+            style({ transform: 'translateY(0)' }),
+            animate('0.1s ease-out',
+                    style({ transform: 'translateY(-100%)' }))
           ]
         )
       ]
@@ -36,7 +35,7 @@ import { DataService } from '../data.service';
           ':leave',
           [
             style({ "border-radius": "0px 0px 16px 16px" }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ "border-radius": "0px 0px 0px 0px" }))
           ]
         ),
@@ -44,7 +43,7 @@ import { DataService } from '../data.service';
           ':enter',
           [
             style({ "border-radius": "0px 0px 0px 0px" }),
-            animate('0.25s ease-out',
+            animate('0.1s ease-out',
                     style({ "border-radius": "0px 0px 16px 16px" }))
           ]
         )
@@ -77,6 +76,10 @@ export class HeaderComponent implements OnInit {
     this.searchPopup = false;
     this.searchText = '';
     this.onSearchChange();
+  }
+
+  resetPage(){
+    this.dataService.selectedEmployee = null;
   }
 
 }

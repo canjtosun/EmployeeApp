@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   @Output()
-  isVisible = new EventEmitter<boolean>();
+  isModalVisible = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
   }
 
   closePopup(){
-    this.isVisible.emit(false);
+    this.isModalVisible.emit(false);
   }
 
 }
