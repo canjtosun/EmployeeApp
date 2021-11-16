@@ -27,9 +27,7 @@ export class FooterComponent implements OnInit {
   @Output()
   isVisible = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor() { }
 
 
   ngOnInit(): void {

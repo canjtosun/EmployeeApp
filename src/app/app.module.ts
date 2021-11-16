@@ -19,11 +19,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './footer/contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './search-filter.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  {path : 'employee/employee-details', component : EmployeeDetailsComponent},
-  {path : 'contact', component: ContactComponent}
-
+  {path: '', component: HomePageComponent},
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({
@@ -34,7 +36,9 @@ const routes: Routes = [
     EmployeesComponent,
     EmployeeDetailsComponent,
     ContactComponent,
-    FilterPipe
+    FilterPipe,
+    NotFoundComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

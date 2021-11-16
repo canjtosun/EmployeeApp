@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
 
