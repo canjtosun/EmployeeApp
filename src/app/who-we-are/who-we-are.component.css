@@ -1,0 +1,43 @@
+.container{
+  background-color: #FF6F6F;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  align-self: center;
+
+}
+
+.mainbox {
+  background-color: #FF6F6F;
+  height: 600px;
+  width: 600px;
+  position: relative;
+  margin-left: 22vw;
+}
+
+.far {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #ffffff;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+  }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
