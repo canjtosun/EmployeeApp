@@ -21,9 +21,16 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './search-filter.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
+import { HelpComponent } from './help/help.component';
+import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
+  {path: 'header', component: HeaderComponent},
+  {path: 'who-we-are', component: WhoWeAreComponent},
+  {path: 'news', component: NewsComponent},
+  {path: 'help', component: HelpComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '/404'}
 ];
@@ -38,7 +45,10 @@ const routes: Routes = [
     ContactComponent,
     FilterPipe,
     NotFoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    WhoWeAreComponent,
+    HelpComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
