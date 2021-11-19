@@ -1,0 +1,93 @@
+<app-header [searchIcon]="false" [displayList]="false"></app-header>
+
+<div class="container">
+  <div class="mainbox">
+    <div class="msg">
+      <h2>Required Softwares</h2>
+      <p><a href="https://code.visualstudio.com/">VSCode</a></p>
+      <p><a href="https://nodejs.org/en/">NodeJS</a></p>
+      <p><a href="https://angular.io/guide/setup-local">Angular CLI</a></p>
+      <p><a href="https://www.typescriptlang.org/">TypeScript</a></p>
+
+      <h2>Pull Request / Installation</h2>
+      <p><a href="https://github.com/canjtosun/EmployeeApp">GitHub</a></p>
+      <p>Pull from provided link and open using 'Open Folder' in VS Code</p>
+      <p>Install NPM for required packages using terminal -> 'npm install'</p>
+      <p>Run the app using terminal -> 'ng serve'</p>
+
+      <h2>Documentation</h2>
+      <p>
+        Employee App has multiple components to build entire app. Each component
+        is given meaningful names to understand easily for new users. The app
+        hierarchy:
+      </p>
+
+      <ul class="tree">
+        <li>
+          <span>App</span>
+          <ul>
+            <li>
+              <span>Header</span>
+              <ul>
+                <li><span>Who We Are</span></li>
+                <li><span>News</span></li>
+                <li><span>Documentation</span></li>
+                <li><span>Sign In / Up</span></li>
+              </ul>
+            </li>
+            <li>
+              <span>Main Page</span>
+              <ul>
+                <li><span>Employees List</span></li>
+                <li><span>Employees Detail</span></li>
+              </ul>
+            </li>
+            <li>
+              <span>Footer</span>
+              <ul>
+                <li><span>Social media</span></li>
+                <li><span>Contact Form</span></li>
+              </ul>
+            </li>
+            <li>
+              <span>Data</span>
+              <ul>
+                <li><span>Data Retrieve</span></li>
+                <li><span>Filter Pipe</span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Header</h3>
+      <p>
+        Contains the home page icon, relative links and search icon If youclick
+        the search icon, you can search thru employees by first name or last
+        name. Home icon returns to home page, else is visiting other pages.
+      </p>
+
+      <h3>Main Page</h3>
+      <p>
+        Left side of the page is a nav bar that you can scroll down for all employees
+         or you can filter it by using A-J K-Z filter. You clikc employee name / last
+         name to see employee details on the right side of the page.
+      </p>
+
+      <h3>Footer</h3>
+      <p>
+        Contains our social media links and a contact for to send email to us.
+      </p>
+
+      <h3>Data</h3>
+      <p>
+        Contains data service and Filter pipe. Data service used for dump all the information
+        from xlsx file and create an Employee object. Data Service is also sorting the Employees
+        by first name for all of them or partially.
+        Pipe Filter is a transform to search employee by first / last name.
+      </p>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

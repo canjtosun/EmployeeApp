@@ -20,15 +20,16 @@
       home
     </mat-icon>
   </a>
-  <a matRipple [matRippleRadius]=20 (click)="this.employeesAll()">Reset</a>
-  <a matRipple [matRippleRadius]=20 (click)="this.employeesAJ()">A-J</a>
-  <a matRipple [matRippleRadius]=20 (click)="this.employeesKZ()">K-Z</a>
+  <div *ngIf="displayList">
+    <a matRipple [matRippleRadius]=20 (click)="this.employeesAll()">Reset</a>
+    <a matRipple [matRippleRadius]=20 (click)="this.employeesAJ()">A-J</a>
+    <a matRipple [matRippleRadius]=20 (click)="this.employeesKZ()">K-Z</a>
+  </div>
   <span class="spacer"></span>
   <a routerLink="/who-we-are">Who We Are</a>
   <a routerLink="/news">News</a>
-  <a routerLink="/help">Help</a>
-  <a routerLink="">Sign In</a>
-  <a routerLink="">Sign Up</a>
+  <a routerLink="/documentation">Documentation</a>
+  <a routerLink="/login-page">Login</a>
 
 
   <a matRipple class="expanding-ripple" (click) = "popupSearch()" *ngIf="searchIcon">

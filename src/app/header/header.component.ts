@@ -58,6 +58,10 @@ export class HeaderComponent implements OnInit {
 
   @Input()
   searchIcon: boolean = true;
+  @Input()
+  displayList: boolean = true;
+
+
   searchText: string = '';
   searchPopup: boolean = false;
   @Output()

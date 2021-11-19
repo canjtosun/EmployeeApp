@@ -22,15 +22,17 @@ import { FilterPipe } from './search-filter.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
-import { HelpComponent } from './help/help.component';
 import { NewsComponent } from './news/news.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'who-we-are', component: WhoWeAreComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'help', component: HelpComponent},
+  {path: 'documentation', component: DocumentationComponent},
+  {path: 'login-page', component: LoginPageComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '/404'}
 ];
@@ -47,8 +49,9 @@ const routes: Routes = [
     NotFoundComponent,
     HomePageComponent,
     WhoWeAreComponent,
-    HelpComponent,
     NewsComponent,
+    DocumentationComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
