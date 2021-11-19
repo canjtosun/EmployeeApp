@@ -35,6 +35,7 @@ import { Employee } from '../Model/Employee';
 export class EmployeesComponent implements OnInit {
 
   employees!: Array<Employee>;
+  employeesAJ!: Array<Employee>;
   searchText = '';
 
   constructor(public dataService: DataService,
@@ -43,7 +44,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.employees = this.dataService.employees;
+    this.employees = this.dataService.employeesJZ;
   }
 
   setEmployee(first_name: string){

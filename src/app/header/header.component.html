@@ -28,7 +28,7 @@
   <a routerLink="">Sign Up</a>
 
 
-  <a matRipple class="expanding-ripple" (click) = "popupSearch()">
+  <a matRipple class="expanding-ripple" (click) = "popupSearch()" *ngIf="searchIcon">
     <mat-icon class="icon-button">
       search
     </mat-icon>

@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
 
@@ -54,6 +54,9 @@ import { DataService } from '../data.service';
 
 export class HeaderComponent implements OnInit {
 
+
+  @Input()
+  searchIcon: boolean = true;
   searchText: string = '';
   searchPopup: boolean = false;
 
