@@ -15,7 +15,11 @@
 
 
 <mat-toolbar  matRipple [matRippleTrigger]="trigger" id="navlist" *ngIf="!searchPopup" [@outAnimation]>
-  <a #trigger class="icon-toolbar" (click)="resetPage()" routerLink="/">Employee Searcher</a>
+  <a #trigger class="icon-toolbar" (click)="resetPage()">
+    <mat-icon class="icon-button" routerLink="/">
+      home
+    </mat-icon>
+  </a>
   <span class="spacer"></span>
   <a routerLink="/who-we-are">Who We Are</a>
   <a routerLink="/news">News</a>
