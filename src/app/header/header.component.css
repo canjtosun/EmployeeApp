@@ -9,6 +9,7 @@
     z-index: 10;
     position: absolute;
     top: 0;
+    font-size: 24;
 }
 
 #navlist-search {
@@ -72,7 +73,7 @@
 
 .toobar-search{
     color: #000000;
-    font-size: 48px;
+    font-size: 16px;
     line-height: 60px;
 }
 
@@ -83,4 +84,5 @@
 a {
   padding: 10px;
   font-size: 16px;
+  cursor: pointer;
 }

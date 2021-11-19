@@ -1,6 +1,7 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
+import { Employee } from '../Model/Employee';
 
 @Component({
   selector: 'app-header',
@@ -59,6 +60,8 @@ export class HeaderComponent implements OnInit {
   searchIcon: boolean = true;
   searchText: string = '';
   searchPopup: boolean = false;
+  @Output()
+  EmployeesDisplayed = new EventEmitter<Array<Employee>>();
 
   constructor(private dataService: DataService) {
   }
@@ -85,4 +88,15 @@ export class HeaderComponent implements OnInit {
     this.dataService.selectedEmployee = null;
   }
 
+  employeesAll(){
+    this.EmployeesDisplayed.emit(this.dataService.employees);
+  }
+
+  employeesAJ(){
+    this.EmployeesDisplayed.emit(this.dataService.employeesAJ);
+  }
+
+  employeesKZ(){
+    this.EmployeesDisplayed.emit(this.dataService.employeesJZ);
+  }
 }
