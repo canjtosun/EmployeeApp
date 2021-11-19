@@ -1,9 +1,9 @@
 <div>
-  <app-header ></app-header>
+  <app-header (EmployeesDisplayed)="swapEmployees($event)"></app-header>
 </div>
 
 <div>
-  <app-employees></app-employees>
+  <app-employees [employees]="this.listEmployees"></app-employees>
 </div>
 
 <div>

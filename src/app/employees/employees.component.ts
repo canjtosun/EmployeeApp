@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import { DataService } from '../data.service';
@@ -34,6 +34,7 @@ import { Employee } from '../Model/Employee';
 })
 export class EmployeesComponent implements OnInit {
 
+  @Input()
   employees!: Array<Employee>;
   searchText = '';
 
