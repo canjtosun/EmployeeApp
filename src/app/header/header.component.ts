@@ -56,6 +56,8 @@ export class HeaderComponent implements OnInit {
 
   searchText: string = '';
   searchPopup: boolean = false;
+  AJDisplayed: boolean = false;
+  KZDisplayed: boolean = false;
 
   constructor(private dataService: DataService) {
   }

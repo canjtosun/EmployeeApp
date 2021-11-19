@@ -36,4 +36,15 @@ export class DataService {
       }
     );
   }
+
+  displayAJ(){
+    this.employees.filter(f=>{
+      f.last_name.charAt(0) <= 'J';
+    });
+  }
+  displayKZ(){
+    this.employees.filter(f=>{
+      f.last_name.charAt(0) > 'J';
+    });
+  }
 }
