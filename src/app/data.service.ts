@@ -8,12 +8,17 @@ import * as XLSX from 'xlsx';
 export class DataService {
 
   employees!: Array<Employee>;
+  employeesAJ!: Array<Employee>;
+  employeesJZ!: Array<Employee>;
   fileName :string = '/assets/employee_data.xlsx';
   searchText = '';
   selectedEmployee: Employee;
 
   constructor() {
     this.employees = new Array<Employee>();
+    this.employeesAJ = Array<Employee>();
+    this.employeesJZ = Array<Employee>();
+
     fetch(this.fileName).then(
       (res) => {
         return res.arrayBuffer();
@@ -26,13 +31,21 @@ export class DataService {
 
         for(let i = 0; i < sheets.length; i++)
         {
-          const temp = XLSX.utils.sheet_to_json(file.Sheets[file.SheetNames[i]])
-          temp.forEach((res) => {
-              //@ts-ignore
-              this.employees.push(new Employee(...Object.values(res)));
+          const temp = XLSX.utils.sheet_to_json(file.Sheets[file.SheetNames[i]]);
+          temp.forEach( (res:Employee) => {
+            this.employees.push(res);
+          });
+
+          temp.forEach((res: Employee) => {
+
+              if(res.first_name[0] <= 'J'){
+                this.employeesAJ.push(res);
+              }
+              else if(res.first_name[0] >= 'K'){
+                this.employeesJZ.push(res);
+              }
           });
         }
-        this.employees.sort( (a,b) => a.first_name < b.first_name ? -1 : 1 );
       }
     );
   }

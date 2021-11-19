@@ -38,7 +38,7 @@
 
 .icon-toolbar{
     color: #f2f2f2;
-    font-size: 24px;
+    font-size: 16px;
     padding-right: 32px;
 }
 
@@ -52,7 +52,7 @@
 .icon-button-search{
     color: #000000;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 60px;
 }
 
 .expanding-ripple{
@@ -81,8 +81,7 @@
     display: none;
 }
 
-a{
+a {
   padding: 10px;
   font-size: 16px;
-  cursor: pointer;
 }
