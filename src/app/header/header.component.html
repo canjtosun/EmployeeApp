@@ -26,10 +26,10 @@
     <a matRipple [matRippleRadius]=20 (click)="this.employeesKZ()">K-Z</a>
   </div>
   <span class="spacer"></span>
-  <a routerLink="/who-we-are">Who We Are</a>
-  <a routerLink="/news">News</a>
-  <a routerLink="/documentation">Documentation</a>
-  <a routerLink="/login-page">Login</a>
+  <a matRipple class="expanding-ripple" routerLink="/who-we-are">Who We Are</a>
+  <a matRipple class="expanding-ripple" routerLink="/news">News</a>
+  <a matRipple class="expanding-ripple" routerLink="/documentation">Documentation</a>
+  <a matRipple class="expanding-ripple" routerLink="/login-page">Login</a>
 
 
   <a matRipple class="expanding-ripple" (click) = "popupSearch()" *ngIf="searchIcon">

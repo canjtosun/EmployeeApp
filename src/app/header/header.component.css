@@ -1,6 +1,6 @@
 
 #navlist {
-    height: 72px;
+    height: 42px;
     background-color: #FF6F6F;
     display: flex;
     border-radius: 0px 0px 16px 16px;
@@ -13,7 +13,7 @@
 }
 
 #navlist-search {
-    height: 72px;
+    height: 42px;
     background-color: #FCFCFC;
     display: flex;
     border-radius: 0;
@@ -52,7 +52,7 @@
 .icon-button-search{
     color: #000000;
     font-size: 16px;
-    line-height: 60px;
+    line-height: 36px;
 }
 
 .expanding-ripple{
@@ -84,5 +84,6 @@
 a {
   padding: 10px;
   font-size: 16px;
+  color: #ffffff;
   cursor: pointer;
 }
