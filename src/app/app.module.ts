@@ -25,6 +25,7 @@ import { WhoWeAreComponent } from './who-we-are/who-we-are.component';
 import { NewsComponent } from './news/news.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -65,9 +66,11 @@ const routes: Routes = [
     MatInputModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [FilterPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginPageComponent]
 })
 export class AppModule { }

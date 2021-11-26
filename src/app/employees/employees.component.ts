@@ -45,7 +45,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.employees = this.dataService.employeesJZ;
+    this.employees = this.dataService.employees;
   }
 
   setEmployee(first_name: string){

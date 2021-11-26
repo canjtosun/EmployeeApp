@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { LoginPageComponent } from '../login-page/login-page.component';
 
 @Component({
   selector: 'app-header',
@@ -67,7 +69,7 @@ export class HeaderComponent implements OnInit {
   @Output()
   EmployeesDisplayed = new EventEmitter<Array<Employee>>();
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private matDialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -102,5 +104,10 @@ export class HeaderComponent implements OnInit {
 
   employeesKZ(){
     this.EmployeesDisplayed.emit(this.dataService.employeesJZ);
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    this.matDialog.open(LoginPageComponent, dialogConfig);
   }
 }
