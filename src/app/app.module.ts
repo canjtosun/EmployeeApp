@@ -71,6 +71,5 @@ const routes: Routes = [
   ],
   providers: [FilterPipe],
   bootstrap: [AppComponent],
-  entryComponents: [LoginPageComponent]
 })
 export class AppModule { }

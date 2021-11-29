@@ -109,5 +109,6 @@ export class HeaderComponent implements OnInit {
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     this.matDialog.open(LoginPageComponent, dialogConfig);
+
   }
 }
