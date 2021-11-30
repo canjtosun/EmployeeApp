@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-employees',
@@ -39,9 +41,7 @@ export class EmployeesComponent implements OnInit {
   employeesAJ!: Array<Employee>;
   searchText = '';
 
-  constructor(public dataService: DataService,
-    private route: ActivatedRoute,
-    private router: Router) {
+  constructor(public dataService: DataService) {
   }
 
   ngOnInit(): void {
@@ -53,3 +53,5 @@ export class EmployeesComponent implements OnInit {
   }
 
 }
+
+

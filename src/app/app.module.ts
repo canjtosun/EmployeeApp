@@ -26,6 +26,7 @@ import { NewsComponent } from './news/news.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -67,7 +68,8 @@ const routes: Routes = [
     MatSelectModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
   ],
   providers: [FilterPipe],
   bootstrap: [AppComponent],
