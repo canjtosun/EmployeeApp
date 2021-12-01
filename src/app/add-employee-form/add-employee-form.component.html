@@ -1,0 +1,17 @@
+<div class="form-group">
+  <div>First Name: <input type="text" id="fn" placeholder="First Name"></div>
+  <div>Last Name: <input type="text" id="ln" placeholder="Last Name"></div>
+  <div>Company: <input type="text" id="company" placeholder=""></div>
+  <div>Address: <input type="text" id="address" placeholder=""></div>
+  <div>City: <input type="text" id="city" placeholder=""></div>
+  <div>County: <input type="text" id="county" placeholder=""></div>
+  <div>Postal: <input type="text" id="postal" placeholder=""></div>
+  <div>Phone: <input type="text" id="phone" placeholder=""></div>
+  <div>Email: <input type="text" id="email" placeholder=""></div>
+  <div>Web: <input type="text" id="web" placeholder=""></div>
+</div>
+
+<div class="buttons">
+  <button (click)="this.dataService.addEmployee(getInformation())">Add</button>
+  <button (click)="closeDialog()">Cancel</button>
+</div>

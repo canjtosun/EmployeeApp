@@ -1,4 +1,3 @@
-import { fn } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../data.service';
@@ -21,11 +20,12 @@ export class EditEmployeeFormComponent implements OnInit {
   }
 
   validateFormAndSubmit(){
-    let fn = (document.getElementById("fn") as HTMLInputElement).value;
-    if(!fn.trim()){
-        alert("Please fill all the fields");
+    let firstName = (document.getElementById("fn") as HTMLInputElement);
+    let lastName = (document.getElementById("ln") as HTMLInputElement);
+    if(!firstName|| !lastName){
+        alert("Please fill first name and last name");
     }
-    //change data
+    //edit data http.put
   }
 
   closeDialog(){

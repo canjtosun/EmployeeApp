@@ -3,6 +3,7 @@ import { Employee } from './Model/Employee';
 import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 import { map, Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root',
@@ -73,5 +74,12 @@ export class DataService {
       }
     });
   }
+
+  //how to remove object/employee from json link ?
+  removeEmployee(){
+    console.log(this.url+'/'+this.selectedEmployee.id);
+    //this.http.delete(this.url+'/'+this.selectedEmployee.id);
+  }
+
 }
 

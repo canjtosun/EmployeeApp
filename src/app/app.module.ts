@@ -28,6 +28,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { EditEmployeeFormComponent } from './edit-employee-form/edit-employee-form.component';
+import { AddEmployeeFormComponent } from './add-employee-form/add-employee-form.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
     DocumentationComponent,
     LoginPageComponent,
     EditEmployeeFormComponent,
+    AddEmployeeFormComponent,
   ],
   imports: [
     BrowserModule,

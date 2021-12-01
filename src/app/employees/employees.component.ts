@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { trigger, style, animate, transition} from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
-import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AddEmployeeFormComponent } from '../add-employee-form/add-employee-form.component';
 
 @Component({
   selector: 'app-employees',
@@ -39,7 +40,7 @@ export class EmployeesComponent implements OnInit {
   employeesAJ!: Array<Employee>;
   searchText = '';
 
-  constructor(public dataService: DataService) {
+  constructor(public dataService: DataService, public matDialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -49,6 +50,13 @@ export class EmployeesComponent implements OnInit {
   setEmployee(first_name: string){
     this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
   }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    this.matDialog.open(AddEmployeeFormComponent, dialogConfig);
+  }
+
+
 
 }
 

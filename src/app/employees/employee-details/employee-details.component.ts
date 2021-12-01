@@ -9,22 +9,21 @@ import { EditEmployeeFormComponent } from 'src/app/edit-employee-form/edit-emplo
   styleUrls: ['./employee-details.component.css'],
 })
 export class EmployeeDetailsComponent implements OnInit {
+  constructor(public dataService: DataService, private matDialog: MatDialog) {}
 
-  constructor(public dataService: DataService, private matDialog: MatDialog) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     this.matDialog.open(EditEmployeeFormComponent, dialogConfig);
   }
 
-  deleteEmployee(){
-    if(confirm(`Are you sure to delete:
-    ${this.dataService.selectedEmployee.first_name} ${this.dataService.selectedEmployee.last_name}`)){
-       alert("deleted");
-     }
+  deleteEmployee() {
+    if (
+      confirm(`Are you sure to delete:
+    ${this.dataService.selectedEmployee.first_name} ${this.dataService.selectedEmployee.last_name}`)
+    ) {
+      this.dataService.removeEmployee();
+    }
   }
-
 }
