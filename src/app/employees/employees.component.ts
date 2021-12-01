@@ -1,10 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { trigger, style, animate, transition, state } from '@angular/animations';
+import { trigger, style, animate, transition} from '@angular/animations';
 import { DataService } from '../data.service';
 import { Employee } from '../Model/Employee';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-employees',

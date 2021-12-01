@@ -18,7 +18,13 @@ export class EmployeeDetailsComponent implements OnInit {
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     this.matDialog.open(EditEmployeeFormComponent, dialogConfig);
+  }
 
+  deleteEmployee(){
+    if(confirm(`Are you sure to delete:
+    ${this.dataService.selectedEmployee.first_name} ${this.dataService.selectedEmployee.last_name}`)){
+       alert("deleted");
+     }
   }
 
 }
