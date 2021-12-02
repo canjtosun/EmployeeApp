@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 import { map, Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class DataService {
   selectedEmployee: Employee;
   url: string = 'https://my-json-server.typicode.com/sudona/employees_json/users';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
     this.employees = new Array<Employee>();
     this.splitValues = new Array<string>();
 
@@ -44,6 +45,7 @@ export class DataService {
     this.http.post(this.url, data).subscribe((res:any) => {
       this.employees.push(res);
       this.sortLists();
+      this._snackBar.open("Added an employee successfully");
     });
   }
 
@@ -53,6 +55,7 @@ export class DataService {
       this.employees.push(data);
       this.selectedEmployee = data;
       this.sortLists();
+      this._snackBar.open("Edited employee successfully");
     });
   }
 
@@ -61,6 +64,7 @@ export class DataService {
     this.http.delete(this.url+'/'+this.selectedEmployee.id).subscribe(res => {
       this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
       this.selectedEmployee = null;
+      this._snackBar.open("Removed employee successfully");
     });
   }
 
