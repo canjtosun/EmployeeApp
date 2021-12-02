@@ -1,17 +1,32 @@
 .form-group{
-  padding: 20px;
+  padding: 10px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 5px;
+  padding: 4px;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+}
+
+mat-form-field.mat-form-field {
+  font-size: 16px;
+}
+
+mat-form-field{
+  width: 100%;
 }
 
 .buttons{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+button{
+  margin: 4px;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }

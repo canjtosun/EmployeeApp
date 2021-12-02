@@ -45,8 +45,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogConfig = new MatDialogConfig();
-    this.matDialog.open(AddEmployeeFormComponent, dialogConfig);
+    this.matDialog.open(AddEmployeeFormComponent, {width: '75%', height: '75%'});
   }
 
 

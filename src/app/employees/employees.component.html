@@ -1,6 +1,5 @@
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav mode="side" opened class="sidenav">
-    <button mat-fab class="floatingButton" (click)="openDialog()">+</button>
     <mat-nav-list>
       <mat-list-item *ngFor="let user of this.dataService.employees | split:this.dataService.splitValues | filter: this.dataService.searchText" [@inOutAnimation]>
         <div class="menu-item" (click)="setEmployee(user.first_name)">
@@ -11,6 +10,11 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-employee-details *ngIf="this.dataService.selectedEmployee" [@inOutAnimation]="this.dataService.selectedEmployee"></app-employee-details>
+    <button mat-fab class="floatingButton" (click)="openDialog()">
+      <mat-icon class="add-button">
+        add
+      </mat-icon>
+    </button>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

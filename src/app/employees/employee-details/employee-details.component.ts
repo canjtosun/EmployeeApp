@@ -14,8 +14,7 @@ export class EmployeeDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   openDialog() {
-    const dialogConfig = new MatDialogConfig();
-    this.matDialog.open(EditEmployeeFormComponent, dialogConfig);
+    this.matDialog.open(EditEmployeeFormComponent, {width: '75%', height: '75%'});
   }
 
   deleteEmployee() {
