@@ -2,10 +2,10 @@
 //10 field match with first row - 10 columns
 export class Employee {
   constructor(public id: number, public first_name: string, public last_name: string,public company_name: string,public address: string,
-    public city: string,public county: string,public postal: string,public phone: string,public email: string, public web: string){}
+    public city: string,public county: string,public postal: string,public phone: string,public email: string, public web: string, public pic: string){}
 
   public clone(): Employee {
-    return new Employee(this.id, this.first_name, this.last_name,this.company_name,this.address,this.city,this.county,this.postal,this.phone,this.email,this.web);
+    return new Employee(this.id, this.first_name, this.last_name,this.company_name,this.address,this.city,this.county,this.postal,this.phone,this.email,this.web, this.pic);
   }
 
   public change(data: Employee): void {
@@ -20,5 +20,6 @@ export class Employee {
     this.phone = data.phone;
     this.email = data.email;
     this.web = data.web;
+    this.pic = data.pic;
   }
 }

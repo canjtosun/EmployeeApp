@@ -16,6 +16,7 @@ export class DataService {
   searchText = '';
   selectedEmployee: Employee;
   url: string = 'https://my-json-server.typicode.com/sudona/employees_json/users';
+  picturesUrl: string = 'https://robohash.org/';
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
     this.employees = new Array<Employee>();
@@ -27,13 +28,16 @@ export class DataService {
       }
       this.sortLists();
     });
+
+
+
   }
 
 
   sortLists() {
     this.employees.sort( (a,b) => a.first_name.toLowerCase() < b.first_name.toLowerCase() ? -1 : 1 );
   }
-  
+
   getValues(data) {
     return Object.keys(data).map((key) => {return data[key]});
   }
@@ -66,9 +70,9 @@ export class DataService {
   }
 
   private makeEmployee(data): Employee {
-    return new Employee(data.id, data.first_name, data.last_name, 
-      data.company_name, data.address, data.city, data.county, data.postal, 
-      data.phone, data.email, data.web);
+    return new Employee(data.id, data.first_name, data.last_name,
+      data.company_name, data.address, data.city, data.county, data.postal,
+      data.phone, data.email, data.web, this.picturesUrl+data.id);
   }
 
 }

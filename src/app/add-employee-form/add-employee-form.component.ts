@@ -10,7 +10,8 @@ import { Employee } from '../Model/Employee';
 })
 export class AddEmployeeFormComponent implements OnInit {
 
-  newEmployee = new Employee(0, "", "", "", "", "", "", "", "", "", "");
+  rand: string = Math.floor(Math.random() * 100).toString();
+  newEmployee = new Employee(0, "", "", "", "", "", "", "", "", "", "", this.dataService.picturesUrl+this.rand);
 
   constructor(public dataService: DataService, private matDialog: MatDialog) { }
 
