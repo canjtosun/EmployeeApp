@@ -1,70 +1,55 @@
 <div class="userDetails">
   <div class="padding">
-    <div class="picture">
-      <img src={{this.dataService.selectedEmployee.pic}} alt="profile picture">
-    </div>
+    <img
+      src="{{ this.dataService.selectedEmployee.pic }}"
+      alt="profile picture"
+    />
     <div id="name">
-      {{this.dataService.selectedEmployee.first_name}} {{this.dataService.selectedEmployee.last_name}}
+      {{ this.dataService.selectedEmployee.first_name }}
+      {{ this.dataService.selectedEmployee.last_name }}
       <a mat-button="expanding-ripple" (click)="openDialog()">Edit</a>
       <a mat-button="expanding-ripple" (click)="deleteEmployee()">Delete</a>
     </div>
     <div class="padding indent-padding">
+      <div class="label">Company Name</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.company_name }}
+      </div>
 
-        <div class="label">
-          Company Name
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.company_name}}
-        </div>
+      <div class="label">Address</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.address }}
+      </div>
 
-        <div class="label">
-          Address
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.address}}
-        </div>
+      <div class="label">City</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.city }}
+      </div>
 
-        <div class="label">
-          City
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.city}}
-        </div>
+      <div class="label">County</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.county }}
+      </div>
 
-        <div class="label">
-          County
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.county}}
-        </div>
+      <div class="label">Postal</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.postal }}
+      </div>
 
-        <div class="label">
-          Postal
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.postal}}
-        </div>
+      <div class="label">Phone</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.phone }}
+      </div>
 
-        <div class="label">
-          Phone
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.phone}}
-        </div>
+      <div class="label">Email</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.email }}
+      </div>
 
-        <div class="label">
-          Email
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.email}}
-        </div>
-
-        <div class="label">
-          Web
-        </div>
-        <div class="details">
-          {{this.dataService.selectedEmployee.web}}
-        </div>
-
+      <div class="label">Web</div>
+      <div class="details">
+        {{ this.dataService.selectedEmployee.web }}
+      </div>
     </div>
+  </div>
 </div>

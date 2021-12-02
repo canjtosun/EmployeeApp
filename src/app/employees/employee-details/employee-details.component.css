@@ -26,3 +26,9 @@
     line-height: 40px;
     color: #000000;
 }
+
+img {
+  border: 3px solid #FF6F6F;
+  border-radius: 80px;
+  width: 100px;
+}
