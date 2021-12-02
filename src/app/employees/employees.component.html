@@ -2,7 +2,7 @@
   <mat-sidenav mode="side" opened class="sidenav">
     <button mat-fab class="floatingButton" (click)="openDialog()">+</button>
     <mat-nav-list>
-      <mat-list-item *ngFor="let user of this.dataService.employees | filter: this.dataService.searchText" [@inOutAnimation]>
+      <mat-list-item *ngFor="let user of this.dataService.employees | split:this.dataService.splitValues | filter: this.dataService.searchText" [@inOutAnimation]>
         <div class="menu-item" (click)="setEmployee(user.first_name)">
           {{user.first_name}} {{user.last_name}}
         </div>

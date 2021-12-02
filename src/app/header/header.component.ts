@@ -66,8 +66,6 @@ export class HeaderComponent implements OnInit {
 
   searchText: string = '';
   searchPopup: boolean = false;
-  @Output()
-  EmployeesDisplayed = new EventEmitter<Array<Employee>>();
 
   constructor(private dataService: DataService, private matDialog: MatDialog) {
   }
@@ -95,15 +93,15 @@ export class HeaderComponent implements OnInit {
   }
 
   employeesAll(){
-    this.EmployeesDisplayed.emit(this.dataService.employees);
+    this.dataService.splitValues = null;
   }
 
   employeesAJ(){
-    this.EmployeesDisplayed.emit(this.dataService.employeesAJ);
+    this.dataService.splitValues = ["A", "J"]
   }
 
   employeesKZ(){
-    this.EmployeesDisplayed.emit(this.dataService.employeesJZ);
+    this.dataService.splitValues = ["K", "Z"]
   }
 
   openDialog() {

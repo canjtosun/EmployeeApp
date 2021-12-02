@@ -30,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { EditEmployeeFormComponent } from './edit-employee-form/edit-employee-form.component';
 import { AddEmployeeFormComponent } from './add-employee-form/add-employee-form.component';
+import { SearchSplitPipe } from './search-split.pipe';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -59,6 +60,7 @@ const routes: Routes = [
     LoginPageComponent,
     EditEmployeeFormComponent,
     AddEmployeeFormComponent,
+    SearchSplitPipe,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,7 @@ const routes: Routes = [
     MatDialogModule,
     HttpClientModule,
   ],
-  providers: [FilterPipe],
+  providers: [FilterPipe, SearchSplitPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, style, animate, transition} from '@angular/animations';
 import { DataService } from '../data.service';
-import { Employee } from '../Model/Employee';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddEmployeeFormComponent } from '../add-employee-form/add-employee-form.component';
 
@@ -35,10 +34,7 @@ import { AddEmployeeFormComponent } from '../add-employee-form/add-employee-form
 })
 export class EmployeesComponent implements OnInit {
 
-  @Input()
-  searchText = '';
-
-  constructor(public dataService: DataService, public matDialog: MatDialog) {
+  constructor(public dataService: DataService, public matDialog: MatDialog) { 
   }
 
   ngOnInit(): void {
