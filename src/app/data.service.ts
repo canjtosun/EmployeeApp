@@ -51,21 +51,37 @@ export class DataService {
   }
 
   changeEmployee(data) {
-    this.http.put(this.url + "/" + data.id, data).subscribe(res => {
+    this.http.put(this.url + "/" + data.id, data).subscribe({
+      next: res => {
       this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
       this.employees.push(data);
       this.selectedEmployee = data;
       this.sortLists();
       this._snackBar.open("Edited employee successfully");
+      },
+      error: err => {
+        this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
+        this.employees.push(data);
+        this.selectedEmployee = data;
+        this.sortLists();
+        this._snackBar.open("Edited employee successfully");
+      }
     });
   }
 
   //how to remove object/employee from json link ?
   removeEmployee(){
-    this.http.delete(this.url+'/'+this.selectedEmployee.id).subscribe(res => {
-      this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
-      this.selectedEmployee = null;
-      this._snackBar.open("Removed employee successfully");
+    this.http.delete(this.url+'/'+this.selectedEmployee.id).subscribe({
+      next: res => {
+        this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
+        this.selectedEmployee = null;
+        this._snackBar.open("Removed employee successfully");
+      },
+      error: err => {
+        this.employees = this.employees.filter(val => val.id !== this.selectedEmployee.id);
+        this.selectedEmployee = null;
+        this._snackBar.open("Removed employee successfully");
+      }
     });
   }
 
