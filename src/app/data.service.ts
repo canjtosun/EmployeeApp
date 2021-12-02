@@ -23,10 +23,7 @@ export class DataService {
 
     this.http.get(this.url).pipe(map ( res => res)).subscribe(res => {
       for (const ind in res) {
-        let newEmployee = new Employee(res[ind].id, res[ind].first_name, res[ind].last_name, 
-          res[ind].company_name, res[ind].address, res[ind].city, res[ind].county, res[ind].postal, 
-          res[ind].phone, res[ind].email, res[ind].web);
-        this.employees.push(newEmployee);
+        this.employees.push(this.makeEmployee(res[ind]));
       }
       this.sortLists();
     });
@@ -43,7 +40,7 @@ export class DataService {
 
   addEmployee(data) {
     this.http.post(this.url, data).subscribe((res:any) => {
-      this.employees.push(res);
+      this.employees.push(this.makeEmployee(res));
       this.sortLists();
       this._snackBar.open("Added an employee successfully");
     });
@@ -66,6 +63,12 @@ export class DataService {
       this.selectedEmployee = null;
       this._snackBar.open("Removed employee successfully");
     });
+  }
+
+  private makeEmployee(data): Employee {
+    return new Employee(data.id, data.first_name, data.last_name, 
+      data.company_name, data.address, data.city, data.county, data.postal, 
+      data.phone, data.email, data.web);
   }
 
 }
