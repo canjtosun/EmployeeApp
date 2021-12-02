@@ -12,20 +12,18 @@ export class EditEmployeeFormComponent implements OnInit {
 
   @Input()
   employees!: Array<Employee>;
+  changedEmployee: Employee;
 
   constructor(public dataService: DataService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.employees = this.dataService.employees;
+    this.changedEmployee = this.dataService.selectedEmployee.clone();
   }
 
   validateFormAndSubmit(){
-    let firstName = (document.getElementById("fn") as HTMLInputElement);
-    let lastName = (document.getElementById("ln") as HTMLInputElement);
-    if(!firstName|| !lastName){
-        alert("Please fill first name and last name");
-    }
-    //edit data http.put
+    this.dataService.changeEmployee(this.changedEmployee);
+    this.closeDialog();
   }
 
   closeDialog(){

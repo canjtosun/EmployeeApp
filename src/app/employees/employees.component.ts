@@ -36,19 +36,16 @@ import { AddEmployeeFormComponent } from '../add-employee-form/add-employee-form
 export class EmployeesComponent implements OnInit {
 
   @Input()
-  employees!: Array<Employee>;
-  employeesAJ!: Array<Employee>;
   searchText = '';
 
   constructor(public dataService: DataService, public matDialog: MatDialog) {
   }
 
   ngOnInit(): void {
-    this.employees = this.dataService.employees;
   }
 
   setEmployee(first_name: string){
-    this.dataService.selectedEmployee = this.employees.find( employee => employee.first_name === first_name);
+    this.dataService.selectedEmployee = this.dataService.employees.find( employee => employee.first_name === first_name);
   }
 
   openDialog() {

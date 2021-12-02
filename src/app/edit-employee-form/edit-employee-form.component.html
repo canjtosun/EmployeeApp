@@ -1,14 +1,16 @@
-<div class="form-group">
-  <div>First Name: <input type="text" id="fn" value= {{dataService.selectedEmployee.first_name}}></div>
-  <div>Last Name: <input type="text" value= {{dataService.selectedEmployee.last_name}}></div>
-  <div>Company: <input type="text" value= {{dataService.selectedEmployee.company_name}}></div>
-  <div>Address: <input type="text" value= {{dataService.selectedEmployee.address}}></div>
-  <div>City: <input type="text" value= {{dataService.selectedEmployee.city}}></div>
-  <div>County: <input type="text" value= {{dataService.selectedEmployee.county}}></div>
-  <div>Postal: <input type="text" value= {{dataService.selectedEmployee.postal}}></div>
-  <div>Phone: <input type="text" value= {{dataService.selectedEmployee.phone}}></div>
-  <div>Email: <input type="text" value= {{dataService.selectedEmployee.email}}></div>
-  <div>Web: <input type="text" value= {{dataService.selectedEmployee.web}}></div>
+<div>
+  <form class="form-group">
+    <div>First Name: <input type="text" [(ngModel)]="changedEmployee.first_name" id="first_name" name="first_name"></div>
+    <div>Last Name: <input type="text" [(ngModel)]="changedEmployee.last_name" id="last_name" name="last_name"></div>
+    <div>Company: <input type="text" [(ngModel)]="changedEmployee.company_name" id="company_name" name="company_name"></div>
+    <div>Address: <input type="text" [(ngModel)]="changedEmployee.address" id="address" name="address"></div>
+    <div>City: <input type="text" [(ngModel)]="changedEmployee.city" id="city" name="city"></div>
+    <div>County: <input type="text" [(ngModel)]="changedEmployee.county" id="county" name="county"></div>
+    <div>Postal: <input type="text" [(ngModel)]="changedEmployee.postal" id="postal" name="postal"></div>
+    <div>Phone: <input type="text" [(ngModel)]="changedEmployee.phone" id="phone" name="phone"></div>
+    <div>Email: <input type="text" [(ngModel)]="changedEmployee.email" id="email" name="email"></div>
+    <div>Web: <input type="text" [(ngModel)]="changedEmployee.web" id="web" name="web"></div>
+  </form>
 </div>
 
 <div class="buttons">

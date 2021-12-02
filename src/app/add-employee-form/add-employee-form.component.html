@@ -1,17 +1,19 @@
-<div class="form-group">
-  <div>First Name: <input type="text" id="fn" placeholder="First Name"></div>
-  <div>Last Name: <input type="text" id="ln" placeholder="Last Name"></div>
-  <div>Company: <input type="text" id="company" placeholder=""></div>
-  <div>Address: <input type="text" id="address" placeholder=""></div>
-  <div>City: <input type="text" id="city" placeholder=""></div>
-  <div>County: <input type="text" id="county" placeholder=""></div>
-  <div>Postal: <input type="text" id="postal" placeholder=""></div>
-  <div>Phone: <input type="text" id="phone" placeholder=""></div>
-  <div>Email: <input type="text" id="email" placeholder=""></div>
-  <div>Web: <input type="text" id="web" placeholder=""></div>
+<div >
+  <form class="form-group">
+    <div>First Name: <input type="text" [(ngModel)]="newEmployee.first_name" id="first_name" name="first_name"></div>
+    <div>Last Name: <input type="text" [(ngModel)]="newEmployee.last_name" id="last_name" name="last_name"></div>
+    <div>Company: <input type="text" [(ngModel)]="newEmployee.company_name" id="company_name" name="company_name"></div>
+    <div>Address: <input type="text" [(ngModel)]="newEmployee.address" id="address" name="address"></div>
+    <div>City: <input type="text" [(ngModel)]="newEmployee.city" id="city" name="city"></div>
+    <div>County: <input type="text" [(ngModel)]="newEmployee.county" id="county" name="county"></div>
+    <div>Postal: <input type="text" [(ngModel)]="newEmployee.postal" id="postal" name="postal"></div>
+    <div>Phone: <input type="text" [(ngModel)]="newEmployee.phone" id="phone" name="phone"></div>
+    <div>Email: <input type="text" [(ngModel)]="newEmployee.email" id="email" name="email"></div>
+    <div>Web: <input type="text" [(ngModel)]="newEmployee.web" id="web" name="web"></div>
+  </form>
 </div>
 
 <div class="buttons">
-  <button (click)="this.dataService.addEmployee(getInformation())">Add</button>
+  <button (click)="addEmployee()">Add</button>
   <button (click)="closeDialog()">Cancel</button>
 </div>
