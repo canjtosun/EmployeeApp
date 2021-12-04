@@ -16,15 +16,22 @@ export class DataService {
   searchText = '';
   selectedEmployee: Employee;
   url: string = 'https://my-json-server.typicode.com/sudona/employees_json/users';
+  databaseUrl: string = 'http://localhost:3000/EmployeeTable';
   picturesUrl: string = 'https://robohash.org/';
 
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) {
     this.employees = new Array<Employee>();
     this.splitValues = new Array<string>();
 
-    this.http.get(this.url).pipe(map ( res => res)).subscribe(res => {
+
+
+    //do concurrency on package.json
+
+
+    this.http.get(this.databaseUrl).pipe(map ( res => res)).subscribe(res => {
       for (const ind in res) {
-        this.employees.push(this.makeEmployee(res[ind]));
+        let increment = 0;
+        this.employees.push(this.makeEmployee(res[ind][increment++]));
       }
       this.sortLists();
     });

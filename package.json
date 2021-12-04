@@ -9,7 +9,8 @@
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve": "cuncurrent \"ng serve\" \"backend/node_modules/.bin/nodemon/index.js\""
   },
   "private": true,
   "dependencies": {
