@@ -20,7 +20,7 @@ export class EmployeeDetailsComponent implements OnInit {
   deleteEmployee() {
     if (
       confirm(`Are you sure to delete:
-    ${this.dataService.selectedEmployee.first_name} ${this.dataService.selectedEmployee.last_name}`)
+${this.dataService.selectedEmployee.first_name} ${this.dataService.selectedEmployee.last_name}`)
     ) {
       this.dataService.removeEmployee();
     }

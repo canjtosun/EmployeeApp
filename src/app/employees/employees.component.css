@@ -13,9 +13,10 @@
 
 .menu-item{
   cursor: pointer;
-  padding: 12px;
+  padding: 24px;
   font-size: 20px;
   color: #4A4A4A;
+  width: 100%;
 }
 
 .add-button{
@@ -28,4 +29,8 @@
   z-index: 99;
   bottom: 44px;
   right: 16px;
+}
+
+:host /deep/ .mat-list-item-content {
+  padding: 0!important;
 }
