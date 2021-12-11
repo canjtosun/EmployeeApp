@@ -28,7 +28,7 @@ export class DataService {
     // var rand: string = Math.floor(Math.random() * 100).toString();
     // console.log(employee_data);
     // for (var entry of employee_data){
-    //   rand = Math.floor(Math.random() * 100).toString();, "", {duration: 3000}
+    //   rand = Math.floor(Math.random() * 100).toString();
     //   if (entry.length == 10) {
     //     this.addEmployee(new Employee(0, entry[0], entry[1], entry[2], entry[3], entry[4], entry[5], entry[6], entry[7], entry[8], entry[9], this.picturesUrl+rand))
     //   }
