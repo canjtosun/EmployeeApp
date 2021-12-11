@@ -38,9 +38,9 @@ function getCollection(){
   return dbConnection.collection('EmployeeTable');
 }
 
-connectToServer((err)=>{if (err){console.log(err);}})
-
-
+connectToServer((err)=>{
+  if (err){console.log(err);
+}})
 
 //get info from table
 app.get('/EmployeeTable', (_, res) => {
